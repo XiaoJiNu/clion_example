@@ -1,0 +1,5 @@
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-debug/CMakeFiles/cmake_testapp.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-debug/CMakeFiles/cmake_testapp_calc.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-debug/CMakeFiles/test_library.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
