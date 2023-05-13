@@ -1,5 +1,15 @@
 /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/CMakeFiles/cmake_testapp.dir
 /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/CMakeFiles/cmake_testapp_calc.dir
 /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/CMakeFiles/test_library.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/CMakeFiles/test.dir
 /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/CMakeFiles/edit_cache.dir
 /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/CMakeFiles/cmake_testapp_boost.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/CMakeFiles/test.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/CMakeFiles/edit_cache.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/CMakeFiles/rebuild_cache.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest/CMakeFiles/test.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest/CMakeFiles/edit_cache.dir
+/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest/CMakeFiles/rebuild_cache.dir

@@ -52,18 +52,9 @@ build cmake_object_order_depends_target_cmake_testapp: phony || CMakeFiles/cmake
 build CMakeFiles/cmake_testapp.dir/main.cpp.o: CXX_COMPILER__cmake_testapp_Release /home/yr/yr/code/clion_example/cmake_testapp/main.cpp || cmake_object_order_depends_target_cmake_testapp
   DEP_FILE = CMakeFiles/cmake_testapp.dir/main.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++17
+  INCLUDES = -I/home/yr/yr/code/clion_example/cmake_testapp/includes/math -I/home/yr/yr/code/clion_example/cmake_testapp/includes/general
   OBJECT_DIR = CMakeFiles/cmake_testapp.dir
   OBJECT_FILE_DIR = CMakeFiles/cmake_testapp.dir
-  TARGET_COMPILE_PDB = CMakeFiles/cmake_testapp.dir/
-  TARGET_PDB = cmake_testapp.pdb
-
-build CMakeFiles/cmake_testapp.dir/general.cpp.o: CXX_COMPILER__cmake_testapp_Release /home/yr/yr/code/clion_example/cmake_testapp/general.cpp || cmake_object_order_depends_target_cmake_testapp
-  DEP_FILE = CMakeFiles/cmake_testapp.dir/general.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -std=gnu++17
-  OBJECT_DIR = CMakeFiles/cmake_testapp.dir
-  OBJECT_FILE_DIR = CMakeFiles/cmake_testapp.dir
-  TARGET_COMPILE_PDB = CMakeFiles/cmake_testapp.dir/
-  TARGET_PDB = cmake_testapp.pdb
 
 
 # =============================================================================
@@ -73,14 +64,14 @@ build CMakeFiles/cmake_testapp.dir/general.cpp.o: CXX_COMPILER__cmake_testapp_Re
 #############################################
 # Link the executable cmake_testapp
 
-build cmake_testapp: CXX_EXECUTABLE_LINKER__cmake_testapp_Release CMakeFiles/cmake_testapp.dir/main.cpp.o CMakeFiles/cmake_testapp.dir/general.cpp.o
+build cmake_testapp: CXX_EXECUTABLE_LINKER__cmake_testapp_Release CMakeFiles/cmake_testapp.dir/main.cpp.o | ../lib/libtest_library.a
   FLAGS = -O3 -DNDEBUG
+  LINK_LIBRARIES = ../lib/libtest_library.a
   OBJECT_DIR = CMakeFiles/cmake_testapp.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/cmake_testapp.dir/
   TARGET_FILE = cmake_testapp
-  TARGET_PDB = cmake_testapp.pdb
+  TARGET_PDB = cmake_testapp.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target cmake_testapp_calc
@@ -94,18 +85,16 @@ build cmake_object_order_depends_target_cmake_testapp_calc: phony || CMakeFiles/
 build CMakeFiles/cmake_testapp_calc.dir/main.cpp.o: CXX_COMPILER__cmake_testapp_calc_Release /home/yr/yr/code/clion_example/cmake_testapp/main.cpp || cmake_object_order_depends_target_cmake_testapp_calc
   DEP_FILE = CMakeFiles/cmake_testapp_calc.dir/main.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++17
+  INCLUDES = -I/home/yr/yr/code/clion_example/cmake_testapp/includes/math -I/home/yr/yr/code/clion_example/cmake_testapp/includes/general
   OBJECT_DIR = CMakeFiles/cmake_testapp_calc.dir
   OBJECT_FILE_DIR = CMakeFiles/cmake_testapp_calc.dir
-  TARGET_COMPILE_PDB = CMakeFiles/cmake_testapp_calc.dir/
-  TARGET_PDB = cmake_testapp_calc.pdb
 
 build CMakeFiles/cmake_testapp_calc.dir/calc.cpp.o: CXX_COMPILER__cmake_testapp_calc_Release /home/yr/yr/code/clion_example/cmake_testapp/calc.cpp || cmake_object_order_depends_target_cmake_testapp_calc
   DEP_FILE = CMakeFiles/cmake_testapp_calc.dir/calc.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++17
+  INCLUDES = -I/home/yr/yr/code/clion_example/cmake_testapp/includes/math -I/home/yr/yr/code/clion_example/cmake_testapp/includes/general
   OBJECT_DIR = CMakeFiles/cmake_testapp_calc.dir
   OBJECT_FILE_DIR = CMakeFiles/cmake_testapp_calc.dir
-  TARGET_COMPILE_PDB = CMakeFiles/cmake_testapp_calc.dir/
-  TARGET_PDB = cmake_testapp_calc.pdb
 
 
 # =============================================================================
@@ -120,9 +109,8 @@ build cmake_testapp_calc: CXX_EXECUTABLE_LINKER__cmake_testapp_calc_Release CMak
   OBJECT_DIR = CMakeFiles/cmake_testapp_calc.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/cmake_testapp_calc.dir/
   TARGET_FILE = cmake_testapp_calc
-  TARGET_PDB = cmake_testapp_calc.pdb
+  TARGET_PDB = cmake_testapp_calc.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target test_library
@@ -136,10 +124,9 @@ build cmake_object_order_depends_target_test_library: phony || CMakeFiles/test_l
 build CMakeFiles/test_library.dir/calc.cpp.o: CXX_COMPILER__test_library_Release /home/yr/yr/code/clion_example/cmake_testapp/calc.cpp || cmake_object_order_depends_target_test_library
   DEP_FILE = CMakeFiles/test_library.dir/calc.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++17
+  INCLUDES = -I/home/yr/yr/code/clion_example/cmake_testapp/includes/math -I/home/yr/yr/code/clion_example/cmake_testapp/includes/general
   OBJECT_DIR = CMakeFiles/test_library.dir
   OBJECT_FILE_DIR = CMakeFiles/test_library.dir
-  TARGET_COMPILE_PDB = CMakeFiles/test_library.dir/test_library.pdb
-  TARGET_PDB = libtest_library.pdb
 
 
 # =============================================================================
@@ -154,9 +141,20 @@ build libtest_library.a: CXX_STATIC_LIBRARY_LINKER__test_library_Release CMakeFi
   OBJECT_DIR = CMakeFiles/test_library.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/test_library.dir/test_library.pdb
   TARGET_FILE = libtest_library.a
-  TARGET_PDB = libtest_library.pdb
+  TARGET_PDB = test_library.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release && /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
 
 
 #############################################
@@ -183,7 +181,193 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/yr/yr/code/clion_example/cmake_testapp/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target cmake_testapp_boost
+
+
+#############################################
+# Order-only phony target for cmake_testapp_boost
+
+build cmake_object_order_depends_target_cmake_testapp_boost: phony || cmake_object_order_depends_target_test_library
+
+build test/CMakeFiles/cmake_testapp_boost.dir/tests.cpp.o: CXX_COMPILER__cmake_testapp_boost_Release /home/yr/yr/code/clion_example/cmake_testapp/test/tests.cpp || cmake_object_order_depends_target_cmake_testapp_boost
+  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK
+  DEP_FILE = test/CMakeFiles/cmake_testapp_boost.dir/tests.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17
+  INCLUDES = -I/home/yr/yr/code/clion_example/cmake_testapp/includes/math -I/home/yr/yr/code/clion_example/cmake_testapp/includes/general
+  OBJECT_DIR = test/CMakeFiles/cmake_testapp_boost.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/cmake_testapp_boost.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target cmake_testapp_boost
+
+
+#############################################
+# Link the executable test/cmake_testapp_boost
+
+build test/cmake_testapp_boost: CXX_EXECUTABLE_LINKER__cmake_testapp_boost_Release test/CMakeFiles/cmake_testapp_boost.dir/tests.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.71.0 libtest_library.a || libtest_library.a
+  FLAGS = -O3 -DNDEBUG
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.71.0  libtest_library.a
+  OBJECT_DIR = test/CMakeFiles/cmake_testapp_boost.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/cmake_testapp_boost
+  TARGET_PDB = cmake_testapp_boost.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test && /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/test: phony test/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test && /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/ccmake -S/home/yr/yr/code/clion_example/cmake_testapp -B/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test && /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/yr/yr/code/clion_example/cmake_testapp -B/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/yr/yr/code/clion_example/cmake_testapp/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ctest_exe_addvalues_zero
+
+
+#############################################
+# Order-only phony target for ctest_exe_addvalues_zero
+
+build cmake_object_order_depends_target_ctest_exe_addvalues_zero: phony || test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir
+
+build test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir/addvalues_zero.cpp.o: CXX_COMPILER__ctest_exe_addvalues_zero_Release /home/yr/yr/code/clion_example/cmake_testapp/test/ctest/addvalues_zero.cpp || cmake_object_order_depends_target_ctest_exe_addvalues_zero
+  DEP_FILE = test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir/addvalues_zero.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17
+  INCLUDES = -I/home/yr/yr/code/clion_example/cmake_testapp/includes/math -I/home/yr/yr/code/clion_example/cmake_testapp/includes/general
+  OBJECT_DIR = test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir
+  OBJECT_FILE_DIR = test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ctest_exe_addvalues_zero
+
+
+#############################################
+# Link the executable test/ctest/ctest_exe_addvalues_zero
+
+build test/ctest/ctest_exe_addvalues_zero: CXX_EXECUTABLE_LINKER__ctest_exe_addvalues_zero_Release test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir/addvalues_zero.cpp.o
+  FLAGS = -O3 -DNDEBUG
+  OBJECT_DIR = test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/ctest/ctest_exe_addvalues_zero
+  TARGET_PDB = ctest_exe_addvalues_zero.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ctest_example_addvalues_negpos
+
+
+#############################################
+# Order-only phony target for ctest_example_addvalues_negpos
+
+build cmake_object_order_depends_target_ctest_example_addvalues_negpos: phony || test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir
+
+build test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir/addvalues_negpos.cpp.o: CXX_COMPILER__ctest_example_addvalues_negpos_Release /home/yr/yr/code/clion_example/cmake_testapp/test/ctest/addvalues_negpos.cpp || cmake_object_order_depends_target_ctest_example_addvalues_negpos
+  DEP_FILE = test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir/addvalues_negpos.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17
+  INCLUDES = -I/home/yr/yr/code/clion_example/cmake_testapp/includes/math -I/home/yr/yr/code/clion_example/cmake_testapp/includes/general
+  OBJECT_DIR = test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir
+  OBJECT_FILE_DIR = test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ctest_example_addvalues_negpos
+
+
+#############################################
+# Link the executable test/ctest/ctest_example_addvalues_negpos
+
+build test/ctest/ctest_example_addvalues_negpos: CXX_EXECUTABLE_LINKER__ctest_example_addvalues_negpos_Release test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir/addvalues_negpos.cpp.o
+  FLAGS = -O3 -DNDEBUG
+  OBJECT_DIR = test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/ctest/ctest_example_addvalues_negpos
+  TARGET_PDB = ctest_example_addvalues_negpos.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/ctest/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest && /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/ctest/test: phony test/ctest/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/ctest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest && /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/ccmake -S/home/yr/yr/code/clion_example/cmake_testapp -B/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build test/ctest/edit_cache: phony test/ctest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/ctest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest && /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/yr/yr/code/clion_example/cmake_testapp -B/home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/ctest/rebuild_cache: phony test/ctest/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build cmake_testapp_boost: phony test/cmake_testapp_boost
+
+build ctest_example_addvalues_negpos: phony test/ctest/ctest_example_addvalues_negpos
+
+build ctest_exe_addvalues_zero: phony test/ctest/ctest_exe_addvalues_zero
 
 build test_library: phony libtest_library.a
 
@@ -195,7 +379,21 @@ build test_library: phony libtest_library.a
 #############################################
 # Folder: /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release
 
-build all: phony cmake_testapp cmake_testapp_calc libtest_library.a
+build all: phony cmake_testapp cmake_testapp_calc libtest_library.a test/all test/ctest/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test
+
+build test/all: phony test/cmake_testapp_boost
+
+# =============================================================================
+
+#############################################
+# Folder: /home/yr/yr/code/clion_example/cmake_testapp/cmake-build-release/test/ctest
+
+build test/ctest/all: phony test/ctest/ctest_exe_addvalues_zero test/ctest/ctest_example_addvalues_negpos
 
 # =============================================================================
 # Built-in targets
@@ -204,14 +402,14 @@ build all: phony cmake_testapp cmake_testapp_calc libtest_library.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompilerABI.c /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystem.cmake.in /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../test/CMakeLists.txt ../test/ctest/CMakeLists.txt /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/FindBoost.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageMessage.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-static.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompilerABI.c /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystem.cmake.in /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../test/CMakeLists.txt ../test/ctest/CMakeLists.txt /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/FindBoost.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageMessage.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /home/yr/yr/software/Clion/CLion-2022.2.3/clion-2022.2.3/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-static.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -1,3 +1,16 @@
 # ninja log v5
-8	13	1683599472461385783	libtest_library.a	792cae320eedf54
-0	8	1683599472453385599	CMakeFiles/test_library.dir/calc.cpp.o	bc1c3fd8875f78d
+90	106	1683859555146791548	libtest_library.a	792cae320eedf54
+1	73	1683773495592127048	CMakeFiles/cmake_testapp_calc.dir/calc.cpp.o	635e0c4cbac83adf
+1	89	1683773575403697068	cmake_testapp	463bc2e2cedf82a2
+1	262	1683773495780126204	test/ctest/CMakeFiles/ctest_exe_addvalues_zero.dir/addvalues_zero.cpp.o	593c0dee9e2ae8ee
+1	90	1683773575403697068	cmake_testapp_calc	9360b0b40435dd10
+2	262	1683773495780126204	test/ctest/CMakeFiles/ctest_example_addvalues_negpos.dir/addvalues_negpos.cpp.o	9f419ecc67d81bd8
+0	23	1683963097689915371	build.ninja	af9fe614bddb2989
+1	990	1683688595467918819	test/CMakeFiles/cmake_testapp_boost.dir/tests.cpp.o	3ef54349a7275bee
+0	210	1683601923003353822	CMakeFiles/cmake_testapp_calc.dir/main.cpp.o	4b66729d04f79d60
+1	82	1683773575395697118	test/ctest/ctest_exe_addvalues_zero	4334620186907cba
+0	90	1683859555130794796	CMakeFiles/test_library.dir/calc.cpp.o	aa668591a1aa5e9b
+0	23	1683601958364887842	CMakeFiles/cmake_testapp.dir/general.cpp.o	353d39a0810f8cc6
+1	82	1683773575395697118	test/ctest/ctest_example_addvalues_negpos	41e076ae4d32527
+1	254	1683773495772126239	CMakeFiles/cmake_testapp.dir/main.cpp.o	42e5cbbb88761aa1
+991	1045	1683688595523917038	test/cmake_testapp_boost	a251489214e08951

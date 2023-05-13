@@ -1,0 +1,8 @@
+//
+// Created by yr on 23-5-9.
+//
+
+#ifndef CMAKE_TESTAPP_HEADER_MATH_H
+#define CMAKE_TESTAPP_HEADER_MATH_H
+
+#endif //CMAKE_TESTAPP_HEADER_MATH_H
